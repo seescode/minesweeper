@@ -6,7 +6,10 @@
             scope: {
             },
             templateUrl: "frontend/directives/tile.html",
-            link: function (scope, element, attrs) {                   
+            link: function (scope, element, attrs) {        
+                scope.click = function() {
+                    alert('hi');
+                }           
             }
         };
     };

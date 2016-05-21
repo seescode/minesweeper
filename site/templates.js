@@ -6,7 +6,7 @@ angular.module('minesweeper').run(['$templateCache', function($templateCache) {
     "\n" +
     "    <div class=\"row\" ng-repeat=\"row in getNumber(rows) track by $index\">\r" +
     "\n" +
-    "        <tile ng-repeat=\"column in getNumber(columns) track by $index\">></tile>\r" +
+    "        <tile ng-repeat=\"column in getNumber(columns) track by $index\"></tile>\r" +
     "\n" +
     "    </div>    \r" +
     "\n" +
@@ -15,7 +15,7 @@ angular.module('minesweeper').run(['$templateCache', function($templateCache) {
 
 
   $templateCache.put('frontend/directives/tile.html',
-    "<div class=\"tile\">        \r" +
+    "<div class=\"tile\" ng-click=\"click()\">        \r" +
     "\n" +
     "</div>"
   );

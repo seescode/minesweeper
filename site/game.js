@@ -47134,14 +47134,13 @@ $provide.value("$locale", {
                 columns: '@'
             },
             templateUrl: "frontend/directives/board.html",
-            link: function (scope, element, attrs) {                 
+            link: function (scope, element, attrs) {                                                 
                 scope.board = BoardService.generateBoard(scope.rows, scope.columns);
                 scope.board = BoardService.addBombsToBoard(20, scope.board);
                 scope.board = BoardService.addNumbersToBoard(scope.board);      
                 
-                
                 scope.getNumber = function(num) {
-                    return new Array(num);   
+                    return new Array(parseInt(num));   
                 }
             }
         };
@@ -47157,7 +47156,10 @@ $provide.value("$locale", {
             scope: {
             },
             templateUrl: "frontend/directives/tile.html",
-            link: function (scope, element, attrs) {                   
+            link: function (scope, element, attrs) {        
+                scope.click = function() {
+                    alert('hi');
+                }           
             }
         };
     };
