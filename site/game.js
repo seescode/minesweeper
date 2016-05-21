@@ -47140,7 +47140,14 @@ $provide.value("$locale", {
                 scope.board = BoardService.addNumbersToBoard(scope.board);      
                 
                 scope.getNumber = function(num) {
-                    return new Array(parseInt(num));   
+                    
+                    var array = [];
+                    
+                    for(var i=0; i < num; i++) {
+                        array.push(i);
+                    }
+                    
+                    return array;   
                 }
             }
         };
@@ -47154,11 +47161,15 @@ $provide.value("$locale", {
         return {
             restrict: 'E', 
             scope: {
+                tileValue: '='
             },
             templateUrl: "frontend/directives/tile.html",
-            link: function (scope, element, attrs) {        
+            link: function (scope, element, attrs) {
+                scope.state = 'closed';   
+                
                 scope.click = function() {
-                    alert('hi');
+                    scope.state = 'opened';
+                    scope.openedValue = scope.tileValue;                    
                 }           
             }
         };

@@ -14,7 +14,14 @@
                 scope.board = BoardService.addNumbersToBoard(scope.board);      
                 
                 scope.getNumber = function(num) {
-                    return new Array(parseInt(num));   
+                    
+                    var array = [];
+                    
+                    for(var i=0; i < num; i++) {
+                        array.push(i);
+                    }
+                    
+                    return array;   
                 }
             }
         };

@@ -4,11 +4,15 @@
         return {
             restrict: 'E', 
             scope: {
+                tileValue: '='
             },
             templateUrl: "frontend/directives/tile.html",
-            link: function (scope, element, attrs) {        
+            link: function (scope, element, attrs) {
+                scope.state = 'closed';   
+                
                 scope.click = function() {
-                    alert('hi');
+                    scope.state = 'opened';
+                    scope.openedValue = scope.tileValue;                    
                 }           
             }
         };
