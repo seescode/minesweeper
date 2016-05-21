@@ -15,8 +15,7 @@ describe('BoardService', function () {
 			});
 		});
 	
-		inject(function (_BoardService_) {
-            
+		inject(function (_BoardService_) {            
 			boardService = _BoardService_;
 		});        
 	});

@@ -44,8 +44,7 @@
             return board;
         };
     
-        svc.addNumbersToBoard = function(board) {      
-            
+        svc.addNumbersToBoard = function(board) {                 
             var rows = board.length;
             var columns = board[0].length;
             
@@ -56,7 +55,6 @@
                     }                    
                 }
             }
-            
             
             return board;
         };   
