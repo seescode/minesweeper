@@ -145,5 +145,160 @@ describe('BoardService', function () {
 		expect(board[2][1]).toBe(0);
 		expect(board[2][2]).toBe(0);					
 	});	
+
+	it('upper right corner bomb', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[0][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe(0);
+		expect(board[0][1]).toBe(1);
+		expect(board[0][2]).toBe('bomb');
+		expect(board[1][0]).toBe(0);
+		expect(board[1][1]).toBe(1);
+		expect(board[1][2]).toBe(1);
+		expect(board[2][0]).toBe(0);
+		expect(board[2][1]).toBe(0);
+		expect(board[2][2]).toBe(0);					
+	});	
+	
+	it('lower left corner bomb', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[2][0] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe(0);
+		expect(board[0][1]).toBe(0);
+		expect(board[0][2]).toBe(0);
+		expect(board[1][0]).toBe(1);
+		expect(board[1][1]).toBe(1);
+		expect(board[1][2]).toBe(0);
+		expect(board[2][0]).toBe('bomb');
+		expect(board[2][1]).toBe(1);
+		expect(board[2][2]).toBe(0);					
+	});	
+	
+	it('lower right corner bomb', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[2][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe(0);
+		expect(board[0][1]).toBe(0);
+		expect(board[0][2]).toBe(0);
+		expect(board[1][0]).toBe(0);
+		expect(board[1][1]).toBe(1);
+		expect(board[1][2]).toBe(1);
+		expect(board[2][0]).toBe(0);
+		expect(board[2][1]).toBe(1);
+		expect(board[2][2]).toBe('bomb');					
+	});		
+
+
+	it('2 bombs', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[0][0] = 'bomb';
+		board[2][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe('bomb');
+		expect(board[0][1]).toBe(1);
+		expect(board[0][2]).toBe(0);
+		expect(board[1][0]).toBe(1);
+		expect(board[1][1]).toBe(2);
+		expect(board[1][2]).toBe(1);
+		expect(board[2][0]).toBe(0);
+		expect(board[2][1]).toBe(1);
+		expect(board[2][2]).toBe('bomb');					
+	});		
+	
+	it('3 bombs', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[0][0] = 'bomb';
+		board[1][1] = 'bomb';		
+		board[2][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe('bomb');
+		expect(board[0][1]).toBe(2);
+		expect(board[0][2]).toBe(1);
+		expect(board[1][0]).toBe(2);
+		expect(board[1][1]).toBe('bomb');
+		expect(board[1][2]).toBe(2);
+		expect(board[2][0]).toBe(1);
+		expect(board[2][1]).toBe(2);
+		expect(board[2][2]).toBe('bomb');					
+	});		
+
+	it('4 bombs', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[0][0] = 'bomb';
+		board[0][1] = 'bomb';		
+		board[1][1] = 'bomb';		
+		board[2][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe('bomb');
+		expect(board[0][1]).toBe('bomb');
+		expect(board[0][2]).toBe(2);
+		expect(board[1][0]).toBe(3);
+		expect(board[1][1]).toBe('bomb');
+		expect(board[1][2]).toBe(3);
+		expect(board[2][0]).toBe(1);
+		expect(board[2][1]).toBe(2);
+		expect(board[2][2]).toBe('bomb');					
+	});		
+	
+
+	it('8 bombs', function () {
+		//Arrange
+		var board = boardService.generateBoard(3, 3);
+		board[0][0] = 'bomb';
+		board[0][1] = 'bomb';		
+		board[0][2] = 'bomb';		
+		board[1][0] = 'bomb';
+		board[1][2] = 'bomb';
+		board[2][0] = 'bomb';		
+		board[2][1] = 'bomb';		
+		board[2][2] = 'bomb';
+				
+		//Act
+		board = boardService.addNumbersToBoard(board);
+		
+		//Assert
+		expect(board[0][0]).toBe('bomb');
+		expect(board[0][1]).toBe('bomb');
+		expect(board[0][2]).toBe('bomb');
+		expect(board[1][0]).toBe('bomb');
+		expect(board[1][1]).toBe(8);
+		expect(board[1][2]).toBe('bomb');
+		expect(board[2][0]).toBe('bomb');
+		expect(board[2][1]).toBe('bomb');
+		expect(board[2][2]).toBe('bomb');					
+	});		
 	
 });
