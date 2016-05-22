@@ -13,6 +13,10 @@
     background-color: #CCC;    
 }
 
+.tile.flagged {    
+    background-color: red;    
+}
+
 
 .row {
     display: flex;
