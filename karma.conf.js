@@ -13,9 +13,9 @@ module.exports = function (config) {
 			'./bower_components/angular/angular.js',
 			'./bower_components/angular-mocks/angular-mocks.js',
 			'./bower_components/lodash/lodash.js',
-			'src/module.js',						
-			'src/**/*.js',
-			'src/**/*.html'
+			'frontend/module.js',						
+			'frontend/**/*.js',
+			'frontend/**/*.html'
 		],
 
 		// list of files to exclude
