@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "bower": "^1.7.9",
     "grunt-angular-templates": "^1.0.3",
     "grunt-contrib-concat": "^1.0.1",
     "jasmine-core": "^2.4.1",
