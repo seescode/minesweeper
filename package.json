@@ -15,5 +15,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "grunt": "^1.0.1"
-  }
+  },
+  "scripts": {
+    "serve": "node backend/app.js"
+  }  
 }
